@@ -1,0 +1,49 @@
+{
+  "name": "dsh-vision-free-pack",
+  "version": "1.0.0",
+  "description": "为 DeepSeek Harness 提供免费多模态视觉能力的插件包：集成智谱 GLM、阿里千问、腾讯混元、Kimi、OVHcloud 等免费视觉模型，支持 10+ 视觉工具，开箱即用。",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "vision",
+    "multimodal",
+    "free",
+    "glm-4v",
+    "qwen-vl",
+    "hunyuan",
+    "kimi",
+    "ocr",
+    "image-understanding"
+  ],
+  "author": "哲哲 <pyljjun2009@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AILift-LiuJianjun/dsh-vision-free-pack.git"
+  },
+  "homepage": "https://github.com/AILift-LiuJianjun/dsh-vision-free-pack#readme",
+  "bugs": {
+    "url": "https://github.com/AILift-LiuJianjun/dsh-vision-free-pack/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "dsh.bundle.patch",
+    "presets/",
+    "examples/",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "dsh.bundle.patch"
+    }
+  }
+}

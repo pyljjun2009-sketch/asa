@@ -1,0 +1,5 @@
+# dsh-vision-free-pack bundle patch
+# 自动注册视觉工具到 DSH 组合中
+- insert:
+    - id: vision-free-pack
+      name: dsh-vision-free-pack

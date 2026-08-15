@@ -1,0 +1,5 @@
+# 智谱 GLM 配置示例（永久免费，推荐）
+# 将此内容合并到 ~/.dsh/profiles/web/cordis.patch.yml
+- id: vision-free-pack
+  config:
+    zhipuApiKey: !!js process.env.ZHIPU_API_KEY

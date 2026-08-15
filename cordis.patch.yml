@@ -1,0 +1,9 @@
+# dsh-vision-free-pack bundle patch
+# 注册视觉插件到 DSH 组合中
+- insert:
+    - id: vision-free-pack
+      name: dsh-vision-free-pack
+      config:
+        # 缓存设置
+        cacheMaxSize: 200
+        cacheTtlSeconds: 3600
