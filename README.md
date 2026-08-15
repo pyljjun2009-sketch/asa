@@ -203,6 +203,26 @@ In `~/.dsh/profiles/web/cordis.patch.yml`:
     kimiApiKey: ''
 ```
 
+### ⚠️ Important: dsh-vision-router textProvider Format
+
+If you also use the `dsh-vision-router` plugin, you **must use the new object format** for `textProvider`, otherwise DSH will hang on startup:
+
+**❌ Wrong format (causes startup hang):**
+```yaml
+- id: vision-router
+  config:
+    textProvider: deepseek-official  # String format is deprecated
+```
+
+**✅ Correct format:**
+```yaml
+- id: vision-router
+  config:
+    textProvider:
+      provider: deepseek-official
+      model: deepseek-v4-pro
+```
+
 ---
 
 ## 📋 Fallback Strategy
@@ -256,6 +276,20 @@ A: Yes. ZhiPu, Qwen, Hunyuan, and Kimi all have direct access in China. OVHcloud
 ### Q: How to check which provider is being used?
 
 A: Use the `vision_status` tool, or check the `provider` field in the response.
+
+### Q: DSH hangs on startup?
+
+A: If you also use the `dsh-vision-router` plugin, check the `textProvider` format. The old string format causes startup hang. Use the new object format:
+
+```yaml
+# ❌ Wrong format
+textProvider: deepseek-official
+
+# ✅ Correct format
+textProvider:
+  provider: deepseek-official
+  model: deepseek-v4-pro
+```
 
 ---
 

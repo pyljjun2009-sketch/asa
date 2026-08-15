@@ -247,6 +247,26 @@ $env:ZHIPU_API_KEY = "your_key_here"
     kimiApiKey: ''
 ```
 
+### ⚠️ 重要：dsh-vision-router 的 textProvider 配置
+
+如果你同时使用了 `dsh-vision-router` 插件，**必须使用新的对象格式**配置 `textProvider`，否则会导致 DSH 启动卡住：
+
+**❌ 错误格式（会导致启动卡住）：**
+```yaml
+- id: vision-router
+  config:
+    textProvider: deepseek-official  # 字符串格式已弃用
+```
+
+**✅ 正确格式：**
+```yaml
+- id: vision-router
+  config:
+    textProvider:
+      provider: deepseek-official
+      model: deepseek-v4-pro
+```
+
 ---
 
 ## 📋 降级策略
@@ -300,6 +320,20 @@ A: 可以。智谱、千问、混元、Kimi 都是国内直连，无需代理。
 ### Q: 如何查看当前使用的提供商？
 
 A: 使用 `vision_status` 工具，或在返回结果中查看 `provider` 字段。
+
+### Q: DSH 启动卡住怎么办？
+
+A: 如果你同时使用了 `dsh-vision-router` 插件，请检查 `textProvider` 配置格式。旧格式（字符串）会导致启动卡住，必须使用新格式（对象）：
+
+```yaml
+# ❌ 错误格式
+textProvider: deepseek-official
+
+# ✅ 正确格式
+textProvider:
+  provider: deepseek-official
+  model: deepseek-v4-pro
+```
 
 ---
 
